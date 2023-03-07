@@ -2,37 +2,37 @@
 
 // funzioni ----------------------------------------------------------------------------------------
 
-function myColCreator (){
+function myColCreator (){                                                   //funzione crea div colonna
     const createdElement = document.createElement('div');
     createdElement.classList.add('col-4', 'mb-2');
     return createdElement
 };
 
-function myCardCreator (){
+function myCardCreator (){                                                              //funzione crea div card
     const createdCard = document.createElement('div');
     createdCard.classList.add('card');
     return createdCard
 };
 
-function myCardBodyCreator (){
+function myCardBodyCreator (){                                                          //funzione crea div card body
     const createdCardBody = document.createElement('div');
     createdCardBody.classList.add('card-body');
     return createdCardBody
 };
 
-function myImgCreator (){
+function myImgCreator (){                                                                                   //funzione crea img
     const createdImg = document.createElement('img');
     createdImg.classList.add('card-img-top');
     return createdImg
 };
 
-function myCardTitleCreator (){
+function myCardTitleCreator (){                                                             //funzione crea h5
     const createdCardTitle = document.createElement('h5');
     createdCardTitle.classList.add('card-title');
     return createdCardTitle
 };
 
-function myCardTxtCreator (){
+function myCardTxtCreator (){                                                           //funzione crea p
     const createdCardTxt = document.createElement('p');
     createdCardTxt.classList.add('card-text');
     return createdCardTxt
@@ -40,7 +40,7 @@ function myCardTxtCreator (){
 
 // main ----------------------------------------------------------------------------------------
 
-const team = [
+const team = [                                                                                              //lista di oggetti
     {
         nome: 'Wayne Barnett',
         ruolo: 'Founder & CEO',
@@ -75,14 +75,14 @@ const team = [
 
 const appendSelector = document.querySelector('.row.justify-content-between');
 
-for (let i = 0; i < team.length; i++){
-    let currentTeamMember = team[i];
+for (let i = 0; i < team.length; i++){                                              //ciclo che legge il contenuto degli oggetti nell array e crea div con il contenuto 
+    let currentTeamMember = team[i];                                    
     const createdElement = myColCreator();
     const createdCard = myCardCreator();
     const createdCardBody = myCardBodyCreator();
     const createdCardTxt = myCardTxtCreator();
     console.log(currentTeamMember);
-    for (let key in currentTeamMember){
+    for (let key in currentTeamMember){                                                     //ciclo che legge la chiave dell oggetto e stampa il contenuto
         console.log(currentTeamMember[key]);
         if (key === 'img'){
             const createdImg = myImgCreator()
@@ -90,11 +90,11 @@ for (let i = 0; i < team.length; i++){
             createdCard.append(createdImg);
         } else if (key === 'nome'){
             const createdCardTitle = myCardTitleCreator();
-            createdCardTitle.innerText = currentTeamMember[key]
+            createdCardTitle.innerText = currentTeamMember[key];
             createdCardBody.append(createdCardTitle);
         } else if (key === 'ruolo'){
             const createdCardTxt = myCardTxtCreator();
-            createdCardTxt.innerText = currentTeamMember[key]
+            createdCardTxt.innerText = currentTeamMember[key];
             createdCardBody.append(createdCardTxt);
         }
     }
