@@ -16,7 +16,7 @@ function myCardCreator (){                                                      
 
 function myCardBodyCreator (){                                                          //funzione crea div card body
     const createdCardBody = document.createElement('div');
-    createdCardBody.classList.add('card-body');
+    createdCardBody.classList.add('card-body', 'text-center');
     return createdCardBody
 };
 
